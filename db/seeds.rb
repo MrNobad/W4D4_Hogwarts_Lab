@@ -1,6 +1,6 @@
-require_relative('../models/admissions')
+require_relative('../models/students')
 
-Student.delete_all()
+# Student.delete_all()
 
 student1 = Student.new({
   "first_name" => "Harry",
