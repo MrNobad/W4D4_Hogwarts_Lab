@@ -34,6 +34,16 @@ class Student
     @id = student_data.first()['id'].to_i
   end
 
+  def house()
+      sql = "SELECT houses.* FROM houses
+      INNER JOIN students
+      ON house_id = students.house_id
+      WHERE student_id = $1"
+      values = [@id]
+      films = SqlRunner.run(sql, values)
+      return films.map { |film| Film.new(film) }
+    end
+
   def self.all()
     sql = "SELECT * FROM students"
     students = SqlRunner.run( sql )

@@ -1,4 +1,10 @@
 <h1>HOGWARTS SCHOOL FOR THE GIFTED</h1>
+<nav>
+  <ul>
+    <li><a href="/students">Student List</a></li>
+    <li><a href="/students/new">Add Student</a></li>
+  </ul>
+</nav>
 
 <% for student in @students %>
 <p>Name: <%= student.pretty_name() %></p>
